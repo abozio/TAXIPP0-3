@@ -1,17 +1,17 @@
 /*********************************************************************************/
 * TAXIPP 0.3 cotsoc_leg.do                                                        *
 *                                                                                 *
-*   1. Calcul des cotisations sociales sur les revenus d'activit√©                 *
+*   1. Calcul des cotisations sociales sur les revenus d'activitÈ                 *
 *                                                                                 *
 * Antoine Bozio 02/2013                                                           *
-* Quentin Laff√©ter 02/2013                                                        *
+* Quentin LaffÈter 02/2013                                                        *
 /*********************************************************************************/
 
 * Ce dofile calcule les cotisations sociales, salariales et patronales pour les salari√©s, les 
-* non-salari√©s et d√©tenteurs de revenus de remplacement √† partir des variables input suivantes :
+* non-salariÈs et dÈtenteurs de revenus de remplacement ‡† partir des variables input suivantes :
 
 global varinput "id_indiv id_foyf id_foys pondv sal_brut public cadre nbh_sal nonsal_brut nbh_nonsal tva taille_ent tx_csp_priv_fac tx_csp_pub_0 chom_brut pension_brut"
-*(mettre √† jour)
+*(mettre ‡ jour)
   
 	* On supprime les variables de revenu IRPP (pour pouvoir les calculer directement)
 	drop sal_h_brut nonsal_h_brut sal_irpp nonsal_irpp pension_irpp chom_irpp
@@ -21,16 +21,16 @@ global varinput "id_indiv id_foyf id_foys pondv sal_brut public cadre nbh_sal no
 	gen nonsal_h_brut = nonsal_brut/nbh_nonsal
 	
 ***********************************************************************
-/*** 1. Calcul des cotisations sociales sur les revenus d'activit√© ***/
+/*** 1. Calcul des cotisations sociales sur les revenus d'activitÈ ***/
 ***********************************************************************
 		
 	**************************			
-	/** 1.1. Secteur priv√© **/
+	/** 1.1. Secteur privÈ **/
 	**************************
 	
-	   	* Hypoth√®ses:
-		* - Les plafonds de S√©curit√© sociale sont appliqu√©s au salaire horaire (calcul√© avec la variable EE nbh_sal)
-		* - Pas de distinction cadre/non-cadre: taux cadre retenu (d'o√π pas de distinction 3PSS)
+	   	* HypotËses:
+		* - Les plafonds de SÈcuritÈ sociale sont appliquÈs au salaire horaire (calculÈ avec la variable EE nbh_sal)
+		* - Pas de distinction cadre/non-cadre: taux cadre retenu (d'o˘ pas de distinction 3PSS)
 		* - Pas distinction taux Alsace-Moselle
 		* - Accidents du travail aux taux bureaux
 		* - On traite s√©par√©ment les contributions non class√©es comme cotisations sociales par la CN (voir 2.3)
