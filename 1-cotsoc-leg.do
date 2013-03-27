@@ -7,7 +7,7 @@
 * Quentin Lafféter 02/2013                                                        *
 /*********************************************************************************/
 
-* Ce dofile calcule les cotisations sociales, salariales et patronales pour les salariÃ©s, les 
+* Ce dofile calcule les cotisations sociales, salariales et patronales pour les salariés, les 
 * non-salariés et détenteurs de revenus de remplacement à  partir des variables input suivantes :
 
 global varinput "id_indiv id_foyf id_foys pondv sal_brut public cadre nbh_sal nonsal_brut nbh_nonsal tva taille_ent tx_csp_priv_fac tx_csp_pub_0 chom_brut pension_brut"
@@ -33,7 +33,7 @@ global varinput "id_indiv id_foyf id_foys pondv sal_brut public cadre nbh_sal no
 		* - Pas de distinction cadre/non-cadre: taux cadre retenu (d'où pas de distinction 3PSS)
 		* - Pas distinction taux Alsace-Moselle
 		* - Accidents du travail aux taux bureaux
-		* - On traite sÃ©parÃ©ment les contributions non classÃ©es comme cotisations sociales par la CN (voir 2.3)
+		* - On traite séparément les contributions non classées comme cotisations sociales par la CN (voir 2.3)
 		
 				
 /* 1.1.1. Calcul des cotisations sociales salariales */
